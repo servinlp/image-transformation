@@ -1,0 +1,8 @@
+version: '3.2'
+
+services:
+  image-transform:
+    image: image-transform:latest
+    restart: unless-stopped
+    ports:
+      - 8000:8000

@@ -1,0 +1,7 @@
+node_modules
+webp
+dist
+.vscode
+
+Dockerfile
+docker-compose.yml
