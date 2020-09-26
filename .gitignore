@@ -105,5 +105,5 @@ dist
 
 .vscode
 
-tmp/*
-!tmp/.gitkeep
+*/tmp/*
+!*/tmp/.gitkeep
