@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+      <input type="file" name="file" />
+      <input type="submit" value="send" />
+    </form>
+
+    <img src="" alt="" style="display: block; width: 100%; height: auto" />
+    <script>
+      const form = document.querySelector('form')
+      const fileInput = document.querySelector('input[type="file"]')
+      const img = document.querySelector('img')
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        const data = new FormData()
+        data.append('file', fileInput.files[0])
+        data.append('quality', 50)
+
+        fetch('http://localhost:8000', {
+          method: 'POST',
+          body: data,
+        })
+          .then(res => res.blob())
+          .then(res => {
+            const url = URL.createObjectURL(res)
+            img.src = url
+          })
+          .catch(err => {
+            console.log('error')
+            console.error(err)
+          })
+      })
+    </script>
+  </body>
+</html>
