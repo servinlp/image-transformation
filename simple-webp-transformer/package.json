@@ -1,12 +1,11 @@
 {
-  "name": "image-transformation",
+  "name": "simple-webp-transformer",
   "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "git@github.com:servinlp/image-transformation.git",
   "author": "servin <servin.nissen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "ppppprebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "start": "node .",
     "dev": "tsc-watch -p tsconfig.json --onSuccess \"node .\""
